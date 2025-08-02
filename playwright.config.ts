@@ -26,10 +26,16 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'https://sede.administracionespublicas.gob.es/procedimientos/index/categoria/34',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    locale: 'es-ES',                  // Мова браузера — іспанська
+    timezoneId: 'Europe/Madrid',      // Часова зона Іспанії
+    geolocation: {                    // Геолокація Іспанії (наприклад, Валенсія)
+      longitude: -0.37739,
+      latitude: 39.4699,
+    },
   },
 
   /* Configure projects for major browsers */
