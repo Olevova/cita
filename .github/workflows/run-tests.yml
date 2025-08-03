@@ -26,3 +26,18 @@ jobs:
 
       - name: Run tests
         run: npx playwright test
+ # Збереження trace-файлів (trace.zip)
+      - name: Upload Playwright Traces
+        if: always()  # навіть якщо тести впали
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/**/*.zip
+
+      # Збереження HTML-звіту
+      - name: Upload Playwright HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: playwright-report
