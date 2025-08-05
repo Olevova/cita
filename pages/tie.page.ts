@@ -65,6 +65,7 @@ async checkAndContinueIfFormAppears() {
   }
 
   console.log('✅ Доступна форма для заповнення.');
+  await this.page.waitForTimeout(10000);
   return true;
 }
 
